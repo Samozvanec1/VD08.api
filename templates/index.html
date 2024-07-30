@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <h1>Сайт с погодой</h1>
+
+    <p> Город- {{city}}</p>
+    <p> Погода - {{weather['weather'][0]['description']}}</p>
+    <p> Температура - {{weather['main']['temp']}}</p>
+    <form action="http://127.0.0.1:5000" method="post">
+        <input type="text" name="city" id="city" placeholder="Город" required>
+        <button type="submit">Погода</button>
+    </form>
+   <div>
+   <ul>
+    {% for news in news %}
+        <li><a href="{{news['url']}}">{{news['title']}}<br></a></li>
+
+    {% endfor %}
+       </ul>
+   </div>
+
+</body>
+</html>
